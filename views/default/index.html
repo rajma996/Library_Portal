@@ -1,0 +1,68 @@
+{{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
+{{extend 'layout.html'}}
+{{#=TABLE(*[TR(TD(item)) for item in table],_class="side_table")}}
+{{#def yo(item): return TD(item)}}
+<table class="side_table">
+{{#for item in table:}}
+{{if auth.is_logged_in()==True:}}
+<tr class="item" onclick="ajax('change?what=1',[],'change')">
+	<!---{{#=TD(item,_class="item",_id=item,_onclick="jQuery('#change').slideToggle();")}}
+	{{#=TD(item,_class="item",_id=item,_onclick="ajax('change',['this'],'change');")}}
+	{{#=TD(item,_class="item",_id=item,_onclick=yo())}}
+	{#{=yo(item)}}-->
+	<td>Issued Books</td>
+</tr>
+<tr class="item" onclick="ajax('change?what=2',[],'change');">
+	<td>Reserved Books</td>
+</tr>
+{{pass}}
+{{if auth.has_membership('librarian')==True:}}
+<tr class="item">
+	<td onclick="ajax('change?what=email',[],'change')">Sent Reminder Emails</td>
+</tr>
+<tr class="item">
+	<td><a id="special" href="{{=URL('default','get_pdf')}}">Manage Book Overdues</a></td>
+</tr>
+{{pass}}
+<tr class="item" onclick="ajax('change?what=3',[],'change');">
+	<td>About Library</td>
+</tr>
+<tr class="item" onclick="ajax('change?what=4',[],'change');">
+	<td>Services</td>
+</tr>
+<tr class="item" onclick="ajax('change?what=5',[],'change');">
+	<td>Announcements</td>
+</tr>
+<tr class="item" onclick="ajax('change?what=6',[],'change');">
+	<td>E-Resources</td>
+</tr>
+<tr class="item" onclick="ajax('change?what=7',[],'change');">
+	<td>Recent Additions</td>
+</tr>
+<tr class="item" onclick="ajax('change?what=8',[],'change');">
+	<td>Library Rules</td>
+</tr>
+<tr class="item" onclick="ajax('change?what=9',[],'change');">
+	<td>Donate Books</td>
+</tr>
+<tr class="item" onclick="ajax('change?what=10',[],'change');">
+	<td>Book Requisition Form</td>
+</tr>
+<tr class="item" onclick="ajax('change?what=11',[],'change');">
+	<td>Print Journals</td>
+</tr>
+<tr class="item" onclick="ajax('change?what=12',[],'change');">
+	<td>Newspaper Coverage</td>
+</tr>
+</table>
+<div id="change">
+<h3>About Library</h3>
+<p>The IIIT Hyderabad Library is the heart of the Academic and Research Programmes of the Institute. All students, faculty members and employees of the Institute are entitled to make use of the Library facilities on taking the library membership. The Library is having a rich collection of books, Reference Books , Theses and Dissertations and Back volumes of periodicals. The Library subscribes to various National / International Print Journals and popular magazines, and also subscribing e-Journals.</p>
+<p>The Library uses software package, Libsys, which is an integrated multi-user library managemant system that supports all in-house operations of the library. It consists of modules on acquisition, cataloguing, circulation, serials, and OPAC. The database of the Library is updated regularly with the new arrivals of books, periodicals,CD-ROMs etc. Records of all the Library patrons have also been created in the Libsys package.</p>
+<h3>Announcements</h3>
+<ul class="announce">
+{{for ann in announce:}}
+{{=LI(ann.description)}}
+{{pass}}
+</div>
+</ul>

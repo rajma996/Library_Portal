@@ -1,0 +1,19 @@
+{{extend 'layout.html'}}
+<h2>Add new announcements</h2>
+{{=form}}
+{{=H3("Existing Announcements")}}
+<table class="book">
+<tr>
+	<th>Name</th>
+	<th>Description</th>
+</tr>
+{{i=0}}
+{{for a in query:}}
+{{if i%2==0:}}
+{{=TR(TD(a.name),TD(a.description),_class="even")}}
+{{else:}}
+{{=TR(TD(a.name),TD(a.description),_class="odd")}}
+{{pass}}
+{{i=i+1}}
+{{pass}}
+</table>

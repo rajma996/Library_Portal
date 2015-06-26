@@ -1,0 +1,16 @@
+{{extend 'layout.html'}}
+{{j=0}}
+{{for i in que:}}
+<p>
+  <a href="#a{{=j}}">{{=i.question}}</a>
+  {{j=j+1}}
+</p>
+{{pass}}
+{{j=0}}
+{{for i in que:}}
+<p>
+  <p style="font-weight:bold">{{=str("Q. "+i.question)}}</p>
+  <a color="black" id="a{{=j}}" style="text-decoration: none"><font color="black"> {{=str("A. "+i.answer)}}</font> </a>
+  {{j=j+1}}
+</p>
+{{pass}} 

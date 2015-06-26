@@ -1,0 +1,8 @@
+{{extend 'layout.html'}}
+<h1>Interface to manage books overdues</h1>
+<br/>
+{{=A('Get list of all books',_href=URL('default','gen_pdf',vars=dict(name="1")),_class="defaulters")}}
+{{=A('Get list of all issued books',_href=URL('default','gen_pdf',vars=dict(name="2")),_class="defaulters")}}
+{{=A('Get list of all reserved books',_href=URL('default','gen_pdf',vars=dict(name="3")),_class="defaulters")}}
+{{=A('Get list of all users',_href=URL('default','gen_pdf',vars=dict(name="4")),_class="defaulters")}}
+{{=A('Get list of defaulters',_href=URL('default','gen_pdf',vars=dict(name="5")),_class="defaulters")}}

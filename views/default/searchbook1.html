@@ -1,0 +1,7 @@
+{{extend 'layout.html'}}
+{{=A('Issue Books',_href='issue',_class="issue")}}
+{{=A('Reserve Books',_href='reserve',_class="reserve")}}
+{{=TABLE(THEAD(TR(TH("Name"),TH("Author"))),*[TR(TD(item.name),TD(item.author)) for item in search],_class="book")}}
+{{#=grid}}
+{{=A('Issue Books',_href='issue',_class="issue")}}
+{{=A('Reserve Books',_href='reserve',_class="reserve")}}

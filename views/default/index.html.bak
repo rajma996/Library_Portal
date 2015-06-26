@@ -1,0 +1,7 @@
+{{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
+{{extend 'layout.html'}}
+<h3>
+	About Library
+</h3>
+<p>The IIIT Hyderabad Library is the heart of the Academic and Research Programmes of the Institute. All students, faculty members and employees of the Institute are entitled to make use of the Library facilities on taking the library membership. The Library is having a rich collection of books, Reference Books , Theses and Dissertations and Back volumes of periodicals. The Library subscribes to various National / International Print Journals and popular magazines, and also subscribing e-Journals.</p>
+<p>The Library uses software package, Libsys, which is an integrated multi-user library managemant system that supports all in-house operations of the library. It consists of modules on acquisition, cataloguing, circulation, serials, and OPAC. The database of the Library is updated regularly with the new arrivals of books, periodicals,CD-ROMs etc. Records of all the Library patrons have also been created in the Libsys package.</p>

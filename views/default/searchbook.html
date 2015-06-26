@@ -1,0 +1,37 @@
+{{extend 'layout.html'}}
+{{if auth.has_membership('librarian')==True:}}
+{{=A('Issue Books',_href='issue',_class="issue")}}
+{{pass}}
+{{=A('Reserve Books',_href='reserve',_class="reserve")}}
+<br>
+<br>
+{{=LEGEND('Search available books:')}}
+{{=form}}
+<table class="book">
+<tr>
+	<th>Serial No.</th>
+	<th>Name</th>
+	<th>Author</th>
+	<th>Subject</th>
+	<th>ISBN</th>
+	<th>Position</th>
+	<th>Publisher</th>
+</tr>
+{{i=1}}
+{{for q in query:}}
+{{if(i%2==0):}}
+<tr class="even">
+{{else:}}
+<tr class="odd">
+{{pass}}
+<td>{{=i}}</td>
+<td>{{=q.name}}</td>
+<td>{{=q.author}}</td>
+<td>{{=q.Subject}}</td>
+<td>{{=q.ISBN}}</td>
+<td>{{=q.book_pos}}</td>
+<td>{{=q.publisher}}</td>
+</tr>
+{{i=i+1}}
+{{pass}}
+</table>
